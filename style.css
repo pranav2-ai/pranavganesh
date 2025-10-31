@@ -1,0 +1,1009 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MODIFIED: Cyber blue background and text colors */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1a1a1a; /* Dark grey background */
+  color: #d1e7f7; /* Pale blue text */
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar initial style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: transparent; /* start transparent */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #00e5ff; /* MODIFIED: Glow blue links */
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* MODIFIED: Scrolled navbar styles */
+.navbar.scrolled {
+  background: #001a33; /* Dark blue background */
+  box-shadow: 0 2px 15px rgba(0, 229, 255, 0.2); /* Blue glow shadow */
+}
+
+.navbar.scrolled a {
+  color: #00e5ff; /* MODIFIED: Glow blue links */
+}
+.navbar.scrolled .hamburger .bar {
+  background-color: #00e5ff; /* MODIFIED: Glow blue hamburger */
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #00e5ff; /* MODIFIED: Glow blue logo */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #00e5ff; /* MODIFIED: Glow blue links */
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* MODIFIED: Link hover effect */
+.navbar a:hover {
+  color: #33ffff; /* Accent blue */
+  text-shadow: 0 0 8px #00e5ff;
+}
+
+.hamburger {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  z-index: 105; /* Above everything */
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #00e5ff; /* MODIFIED: Initial color on hero */
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('img/Gemini_Generated_Image_isczf9isczf9iscz1.png') no-repeat center center/cover;
+  position: relative;
+  color: #d1e7f7; /* MODIFIED: Pale blue text */
+}
+
+/* MODIFIED: Darker, bluer overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 20, 30, 0.7); /* dark blue overlay */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* make sure text appears above overlay */
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+}
+
+.hero-content span {
+  color: #00e5ff; /* MODIFIED: Accent blue */
+}
+
+/* MODIFIED: Cyber-style button */
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent; /* MODIFIED */
+  color: #00e5ff; /* MODIFIED */
+  border: 2px solid #00e5ff; /* MODIFIED */
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* MODIFIED: Button hover effect */
+.btn:hover {
+  transform: scale(1.1);
+  background: #00e5ff;
+  color: #001a33; /* Dark blue text on hover */
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+/* MODIFIED: Dark section (Skills) */
+.section.dark {
+  background: #001a33; /* Dark blue background */
+  color: #d1e7f7;
+}
+
+/* MODIFIED: Headings */
+h2 {
+  color: #00e5ff;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.skills-grid, .project-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+}
+
+/* MODIFIED: Dark cards */
+.skill-card, .project-card {
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  color: #d1e7f7;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* MODIFIED: Card hover */
+.skill-card:hover, .project-card:hover {
+  transform: translateY(-5px);
+  border-color: #00e5ff; /* Glow border */
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3); /* Brighter glow */
+}
+
+/* MODIFIED: Skill cards in dark section */
+.section.dark .skill-card {
+  background: #1a1a1a; /* Body background color */
+  color: #00e5ff; /* Glow blue text */
+  border: 1px solid #00e5ff; /* Glow border */
+}
+
+.contact-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-links a {
+  color: #d1e7f7; /* MODIFIED */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.contact-links a:hover {
+  color: #33ffff; /* MODIFIED */
+  text-shadow: 0 0 8px #00e5ff;
+}
+
+/* MODIFIED: Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #001a33; /* Dark blue */
+  color: #d1e7f7; /* Pale blue */
+}
+
+/* Animation */
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About container layout */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* MODIFIED: Biodata card */
+.biodata {
+  flex: 1 1 300px;
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 64, 128, 0.2); /* Blue shadow */
+}
+
+.biodata h3 {
+  margin-bottom: 1rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+.biodata ul {
+  list-style: none;
+}
+
+.biodata li {
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+/* Education Timeline */
+.education {
+  flex: 2 1 400px;
+}
+
+.education h3 {
+  margin-bottom: 1rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  border-left: 3px solid #00e5ff; /* MODIFIED: Glow blue */
+}
+
+.education {
+  flex: 2 1 400px;
+  position: relative;
+  margin-top: 2rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 40px; /* space for vertical line and icon */
+}
+
+/* MODIFIED: Vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; /* left edge */
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #00e5ff; /* Glow blue */
+}
+
+/* Timeline item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+/* MODIFIED: Timeline icon/logo */
+.timeline-item::before {
+  content: '\1F393'; /* graduation cap icon */
+  position: absolute;
+  left: -16px; /* center over the line */
+  top: 10px;
+  font-size: 24px;
+  color: #00e5ff; /* Glow blue */
+  background: #111; /* Black bg */
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 32px;
+  box-shadow: 0 2px 6px rgba(0, 229, 255, 0.3); /* Blue glow */
+}
+
+/* MODIFIED: Timeline content box */
+.timeline-content {
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  padding: 1rem 1.5rem 1rem 50px; /* left padding aligns text with icon */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  text-align: left;
+}
+
+/* MODIFIED: Year style */
+.timeline-year {
+  font-weight: 700;
+  color: #00e5ff; /* Accent blue */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Scroll animation */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Profile Image Container */
+.profile-image {
+  width: 100%;
+  max-width: 200px; /* adjust as needed */
+  aspect-ratio: 9 / 16; /* ensures 9:16 ratio */
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.3); /* MODIFIED: Blue shadow */
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures image fills the container */
+  display: block;
+}
+/* MODIFIED: Biodata container */
+.biodata {
+  flex: 1 1 300px;
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center children horizontally */
+  text-align: left; /* keep text left-aligned */
+}
+
+/* MODIFIED: Skills Section */
+.skills {
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* MODIFIED: Each skill item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  background: #1a1a1a; /* Dark grey */
+  border: 1px solid #004080;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 64, 128, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Skill logos */
+.skill-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* MODIFIED: Skill name text */
+.skill-item span {
+  font-weight: 600;
+  color: #d1e7f7; /* Pale blue */
+}
+
+/* MODIFIED: Hover animation */
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 229, 255, 0.3);
+  border-color: #00e5ff;
+}
+
+/* MODIFIED: Projects Section */
+.projects {
+  background: transparent; /* Show body bg */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+/* Container for projects */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* MODIFIED: Project Card */
+.project-card {
+  /* max-width: 540px; */ 
+  width: 100%;
+  flex: 1 1 300px; /* Will now grow to fill space */
+  
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3); /* MODIFIED: Blue glow */
+  border-color: #00e5ff; /* MODIFIED: Glow border */
+}
+
+/* Project Image */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Project Content */
+.project-content {
+  padding: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+.project-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+.project-content p {
+  color: #d1e7f7; /* MODIFIED: Pale blue */
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  flex-grow: 1; 
+}
+
+/* MODIFIED: Button */
+.project-content .btn {
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  align-self: flex-start;
+}
+
+.project-content .btn:hover {
+  background: #00e5ff; /* MODIFIED */
+  color: #001a33; /* MODIFIED */
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+/* MODIFIED: Contact */
+.contact {
+  background: transparent; /* Show body bg */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-icon svg {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+  /* Set a default fill for icons that don't have one (like X/Twitter) */
+  fill: #00e5ff; 
+}
+
+/* MODIFIED: Hover animation */
+.contact-icon svg:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #00e5ff); /* Blue glow */
+}
+
+.certificates {
+  margin-top: 3rem;
+  padding: 2rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+.certificates h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+  text-align: left;
+}
+
+.certificates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* MODIFIED: Certificate item */
+.certificate-item {
+  display: flex;
+  align-items: left;
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 229, 255, 0.3); /* MODIFIED: Blue glow */
+  border-color: #00e5ff; /* MODIFIED: Glow border */
+}
+
+/* MODIFIED: SVG logo container */
+.certificate-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+}
+
+.certificate-logo svg {
+  width: 100%;
+  height: 100%;
+  fill: #00e5ff; /* MODIFIED: Glow blue icon */
+}
+
+/* Certificate text */
+.certificate-content h4 {
+  margin: 0 0 0.3rem 0;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+  font-size: 1.1rem;
+}
+
+.certificate-content p {
+  margin: 0;
+  color: #d1e7f7; /* MODIFIED: Pale blue */
+  font-size: 0.95rem;
+}
+
+.internship {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center; /* Center all content */
+}
+
+.internship h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+}
+
+/* MODIFIED: Internship item container */
+.internship-item {
+  background: #111; /* Black card */
+  border: 1px solid #004080; /* Dark blue border */
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin: 1rem auto; /* Center horizontally */
+  display: inline-block; /* Shrink to fit content */
+  text-align: left; /* Keep inner text aligned left */
+  max-width: 500px; /* Optional: limit card width */
+  box-shadow: 0 2px 10px rgba(0, 64, 128, 0.2); /* Blue shadow */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.internship-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 229, 255, 0.3); /* MODIFIED: Blue glow */
+  border-color: #00e5ff; /* MODIFIED: Glow border */
+}
+
+.internship-item h4 {
+  margin: 0 0 0.3rem 0;
+  color: #00e5ff; /* MODIFIED: Glow blue */
+  font-size: 1.2rem;
+}
+
+.internship-item .company,
+.internship-item .duration {
+  font-size: 0.95rem;
+  color: #d1e7f7; /* MODIFIED: Pale blue */
+  margin: 0.2rem 0;
+}
+
+.internship-item .duration {
+  color: #aaa; /* MODIFIED: Lighter pale blue */
+}
+
+.internship-item ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0 0;
+  color: #d1e7f7; /* MODIFIED: Pale blue */
+}
+
+.internship-item li {
+  margin-bottom: 0.5rem;
+}
+
+/* =================================== */
+/* Responsive adjustments (Mobile)  */
+/* =================================== */
+@media (max-width: 768px) {
+  /* --- General --- */
+  h2, .projects h2, .contact h2, .certificates h3, .internship h3 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+  
+  .section {
+    padding: 3rem 0; /* CHANGED: Full width on mobile */
+  }
+  
+  .projects, .contact {
+     padding: 3rem 0; /* CHANGED: Full width on mobile */
+  }
+
+  /* --- Navbar & Mobile Menu --- */
+  .navbar {
+    padding: 1rem 1.5rem; /* Reduce navbar padding */
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100vh;
+    background: #001a33; /* MODIFIED: Dark blue menu */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .nav-menu.active {
+    right: 0; /* Slide in */
+  }
+  
+  .nav-menu a {
+    color: #00e5ff; /* MODIFIED: Glow blue links */
+    font-size: 1.5rem;
+  }
+  
+  .hamburger {
+    display: block; /* Show hamburger */
+  }
+
+  /* Hamburger "X" animation */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .hamburger.active .bar {
+    background-color: #00e5ff; /* MODIFIED: "X" color */
+  }
+
+  /* --- Hero --- */
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .txt {
+     font-size: 14vmin; /* Adjust vmin */
+  }
+
+  /* --- About --- */
+  .about-container {
+    flex-direction: column; /* Stack biodata and education */
+    gap: 2rem;
+    padding: 0 1rem; /* Add padding here so cards aren't edge-to-edge */
+  }
+  
+  .biodata, .education {
+    flex: 1 1 100%; /* Make them full width */
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+  .timeline-item::before {
+    left: -12px;
+  }
+  .timeline-content {
+    padding-left: 40px;
+  }
+  
+  .certificates {
+    padding: 1rem 0;
+  }
+  
+  .certificate-item {
+    flex-direction: row;
+    align-items: right;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .certificate-logo {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* --- Skills --- */
+  .skills-grid {
+    padding: 0 1rem; /* Add padding here */
+  }
+
+  /* --- Projects --- */
+  .projects-container {
+    padding: 0 1rem; /* Add padding here */
+  }
+  
+  /* --- Contact --- */
+  .contact-info {
+    gap: 1.5rem;
+  }
+  
+  .contact-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Find this existing rule */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  /* MODIFIED: Colors */
+  background: transparent;
+  color: #00e5ff;
+  border: 2px solid #00e5ff;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  /* MODIFIED: Added background-color, color, border-color and box-shadow to transition */
+  transition: transform 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  /* MODIFIED: Hover colors */
+  background: #00e5ff;
+  color: #001a33;
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+/* MODIFIED: Active state */
+.btn:active {
+  background: #00e5ff; /* Accent blue */
+  color: #001a33;       /* Dark text */
+  border-color: #00e5ff;
+  transform: scale(0.98); /* Adds a slight press-down effect */
+}
+
+
+/* MODIFIED: Matrix title color */
+#matrix-title {
+  color: #00e5ff; /* Primary glow blue */
+  letter-spacing: 2px;
+}
+
+/* Scroll-down arrow styles */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 2s ease-in-out forwards;
+  z-index: 2;
+}
+
+/* This rule is fine, already uses glow blue */
+.scroll-down .arrow {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 3px solid #00e5ff;
+  border-bottom: 3px solid #00e5ff;
+  transform: rotate(-45deg);
+  animation: bounce 1.5s infinite;
+}
+
+/* Bounce animation for the arrow */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(10px) rotate(-45deg); }
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hidden state */
+.scroll-down.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* ===== Cyber-Blue Scroll-Down Arrow ===== */
+/* This section seems to be a duplicate/override, 
+   but it's already using the correct colors, so it's left as is. */
+.scroll-down {
+  margin-top: 2rem;              /* Space below buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease-in-out forwards;
+  z-index: 2;
+}
+
+.scroll-down .arrow {
+  width: 28px;
+  height: 28px;
+  border-left: 3px solid #00e5ff;
+  border-bottom: 3px solid #00e5ff;
+  transform: rotate(-45deg);
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+  filter: drop-shadow(0 0 8px #00e5ff)
+          drop-shadow(0 0 15px #00e5ff)
+          drop-shadow(0 0 25px #00e5ff);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Glowing hover pulse */
+.scroll-down .arrow:hover {
+  filter: drop-shadow(0 0 12px #00e5ff)
+          drop-shadow(0 0 20px #00e5ff)
+          drop-shadow(0 0 35px #00e5ff);
+  transform: rotate(-45deg) scale(1.1);
+}
+
+/* Bounce animation for motion */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(10px) rotate(-45deg); }
+}
+
+/* Fade-in and hidden states */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.scroll-down.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* ===== Skills Section ===== */
+.skills-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skill-bar {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.skill-fill {
+  height: 10px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #a8f0ff, #00e5ff);
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Optional: animate bars when in view */
+@keyframes fillBar {
+  from { width: 0; }
+}
+
+.skill-fill.animated {
+  animation: fillBar 2s forwards;
+}
+
+
+.btn svg {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+  transform: translateY(2px);
+}
+
